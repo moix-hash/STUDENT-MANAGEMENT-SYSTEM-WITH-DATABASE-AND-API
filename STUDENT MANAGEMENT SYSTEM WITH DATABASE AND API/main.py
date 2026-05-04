@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 import models, schemas
 from database import engine, get_db
 
-# Create database tables on startup
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
