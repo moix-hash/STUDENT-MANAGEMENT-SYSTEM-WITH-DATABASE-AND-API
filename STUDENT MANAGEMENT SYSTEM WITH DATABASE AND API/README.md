@@ -103,7 +103,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **FastAPI** — Modern, fast web framework
 - **SQLAlchemy** — ORM for database operations
