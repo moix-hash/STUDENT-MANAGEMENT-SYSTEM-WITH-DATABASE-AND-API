@@ -13,10 +13,6 @@ app = FastAPI(
 )
 
 
-# ──────────────────────────────────────────────
-# 1. CREATE Student
-# POST /create-student/
-# ──────────────────────────────────────────────
 @app.post("/create-student/", response_model=schemas.StudentResponse, status_code=201)
 def create_student(student: schemas.StudentCreate, db: Session = Depends(get_db)):
     """
@@ -35,11 +31,6 @@ def create_student(student: schemas.StudentCreate, db: Session = Depends(get_db)
     db.refresh(new_student)
     return new_student
 
-
-# ──────────────────────────────────────────────
-# 2. GET ALL Students
-# GET /students-all/
-# ──────────────────────────────────────────────
 @app.get("/students-all/", response_model=list[schemas.StudentResponse])
 def get_all_students(db: Session = Depends(get_db)):
     """
@@ -47,11 +38,6 @@ def get_all_students(db: Session = Depends(get_db)):
     """
     return db.query(models.Student).all()
 
-
-# ──────────────────────────────────────────────
-# 3. GET Single Student by ID
-# GET /student/{id}
-# ──────────────────────────────────────────────
 @app.get("/student/{id}", response_model=schemas.StudentResponse)
 def get_student(id: int, db: Session = Depends(get_db)):
     """
@@ -62,12 +48,7 @@ def get_student(id: int, db: Session = Depends(get_db)):
     if not student:
         raise HTTPException(status_code=404, detail="Student not found")
     return student
-
-
-# ──────────────────────────────────────────────
-# 4. UPDATE Student by ID
-# PUT /update-students/{id}
-# ──────────────────────────────────────────────
+    
 @app.put("/update-students/{id}", response_model=schemas.StudentResponse)
 def update_student(id: int, updated_data: schemas.StudentCreate, db: Session = Depends(get_db)):
     """
@@ -84,11 +65,6 @@ def update_student(id: int, updated_data: schemas.StudentCreate, db: Session = D
     db.refresh(student)
     return student
 
-
-# ──────────────────────────────────────────────
-# 5. DELETE Student by ID
-# DELETE /delete-students/{id}
-# ──────────────────────────────────────────────
 @app.delete("/delete-students/{id}")
 def delete_student(id: int, db: Session = Depends(get_db)):
     """
