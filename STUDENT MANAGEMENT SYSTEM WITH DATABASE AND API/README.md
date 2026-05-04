@@ -1,10 +1,10 @@
-# 🎓 Student Management API
+#  Student Management API
 
 A simple **CRUD REST API** built with **FastAPI**, **SQLAlchemy**, and **SQLite**.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 project/
@@ -50,7 +50,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## 📦 Request Body (Create / Update)
+##  Request Body (Create / Update)
 
 ```json
 {
@@ -67,7 +67,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-## ✅ Example Responses
+##  Example Responses
 
 ### Create Student — `POST /create-student/`
 ```json
