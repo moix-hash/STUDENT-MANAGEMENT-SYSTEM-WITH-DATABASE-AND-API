@@ -18,7 +18,7 @@ project/
 
 ---
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 ### 1. Install Dependencies
 ```bash
