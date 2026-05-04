@@ -2,8 +2,8 @@ from pydantic import BaseModel, EmailStr, Field
 
 class StudentBase(BaseModel):
     name: str
-    email: EmailStr                                          # Validates email format
-    age: int = Field(gt=0, description="Age must be positive")  # Must be positive
+    email: EmailStr                                          
+    age: int = Field(gt=0, description="Age must be positive")  
     course: str
 
 class StudentCreate(StudentBase):
